@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-spacing: 0;
+}
+
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.header {
+    background-color: rgb(74, 117, 44);
+    padding: 1rem;
+}
+
+.flagDiv p {
+    color: white;
+    font-size: 1.7rem;
+    display: inline;
+    margin-right: .5rem;
+}
+
+.flagDiv img {
+    margin-bottom: 1rem;
+}
+
+.tile {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(162, 209, 73);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+tr:nth-child(odd) td:nth-child(odd) .tile,
+tr:nth-child(even) td:nth-child(even) .tile {
+    background-color: rgb(170, 215, 81);
+}
+
+tr:nth-child(odd) td:nth-child(odd) .openTile,
+tr:nth-child(even) td:nth-child(even) .openTile {
+    background-color: rgb(229, 194, 159) !important;
+}
+
+.tile:hover {
+    background-color: rgb(191, 225, 125) !important;
+}
+
+.openTile,
+.openTile:hover {
+    background-color: rgb(215, 184, 153) !important;
+}
+
+.flag {
+    background-image: url("./Assets/flag.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    animation: setFlag .1s ease-in-out;
+}
+
+.openMine {
+    background-image: url("./Assets/bomb.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    animation: explode .3s ease-in-out;
+}
+
+.color1 {
+    color: rgb(25, 118, 210)
+}
+
+.color2 {
+    color: rgb(56, 142, 60)
+}
+
+.color3 {
+    color: rgb(211, 47, 47)
+}
+
+.color4 {
+    color: rgb(123, 31, 162)
+}
+
+
+/* Animations: */
+
+@keyframes setFlag {
+    from {
+        background-size: 0;
+        background-position: bottom;
+    }
+    to {
+        background-size: 50%;
+        background-position: center;
+    }
+}
+
+@keyframes explode {
+    0% {
+        background-size: 0;
+        background-position: bottom;
+    }
+    50% {
+        background-size: 100%;
+        background-position: center;
+    }
+    100% {
+        background-size: 60%;
+        background-position: center;
+    }
+}
